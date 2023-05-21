@@ -10,10 +10,18 @@ app.use(express.static(__dirname+'/html'));
 
 console.log("처음 시작 : "+__dirname);
 
-
+//Index 초기 페이지 Open
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/html/index.html');
 });
+
+//About 페이지 Open
+app.get('/about', (req, res) => {
+  res.sendFile(__dirname + '/html/about.html');
+});
+
+
+
 
 // Set the view engine to EJS
 //app.set('view engine', 'ejs');
