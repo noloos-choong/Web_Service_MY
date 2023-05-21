@@ -4,7 +4,7 @@ var fs = require('fs');
 
 const app = express()
 app.use(cors());
-app.use(express.static(__dirname+'\\html'));
+app.use(express.static(__dirname+'/html'));
 
 //const ctrl = require("./about");
 
