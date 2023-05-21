@@ -12,7 +12,7 @@ console.log("처음 시작 : "+__dirname);
 
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '\\html\\index.html');
+    res.sendFile(__dirname + '/html/index.html');
 });
 
 // Set the view engine to EJS
