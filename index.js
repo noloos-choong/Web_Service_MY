@@ -10,25 +10,25 @@ app.use(express.static(__dirname+'\\html'));
 
 console.log("처음 시작 : "+__dirname);
 
-/*
+
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/html/new.html');
-  });
-  */
+    res.sendFile(__dirname + '\\html\\index.html');
+});
+
 // Set the view engine to EJS
 //app.set('view engine', 'ejs');
 
 // 해당하는 이미지호출
-app.get('/pic/:Pname', (req, res) => {
+app.get('/qweqwasdzcTEST', (req, res) => {
   const {Pname} = req.params;
   console.log("이미지 호출 : "+Pname);
-  if(fs.existsSync(__dirname+`\\html\\img\\${Pname}.png`)){
-    fs.readFile(__dirname+`\\html\\img\\${Pname}.png`, function(error, data){
+  if(fs.existsSync(`https://port-0-web-service-my-5o1j2llh3am0ew.sel4.cloudtype.app\\html\\img\\${Pname}.png`)){
+    fs.readFile(`https://port-0-web-service-my-5o1j2llh3am0ew.sel4.cloudtype.app\\html\\img\\${Pname}.png`, function(error, data){
       res.end(data);
     });
   }else{
     //디폴트 이미지 뿌려주기
-    fs.readFile(__dirname+"\\html\\img\\PrepareImage.png", function(error, data){
+    fs.readFile("https://port-0-web-service-my-5o1j2llh3am0ew.sel4.cloudtype.app\\html\\img\\PrepareImage.png", function(error, data){
       res.end(data);
     });
   }
@@ -49,6 +49,30 @@ app.get('/pic/:Pname', (req, res) => {
  */
 
 
+  app.get('/image/:name', (req, res) => {
+    const { name }= req.params;
+
+    console.log("호출 이미지 :" + name);
+    const imgPath = __dirname+'\\html\\img\\'+name+'.png';
+    //var imagePath = path.join(__dirname, '\html\img\RPA_BOT4.png');
+    console.log('이미지 전체 경로 : ' + imgPath);
+  
+    fs.readFile(imgPath, (err, data) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send('Error');
+        return;
+      }
+  
+      res.writeHead(200, {
+        'Content-Type': 'image/jpeg',
+        'Content-Length': data.length
+      });
+      res.end(data);
+    });
+  });
+
+
 
   // index에서 모든 화면 이동 구현
   app.get('/:name', function (req, res) {
@@ -61,6 +85,7 @@ app.get('/pic/:Pname', (req, res) => {
         res.writeHead(200, {'Content-Type' : 'text/html'});
         res.end(data);
     })
+
   });
 
   //app.get('/image', ctrl.Love);
