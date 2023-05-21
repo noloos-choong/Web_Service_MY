@@ -28,54 +28,14 @@ app.get('/pic/:Pname', (req, res) => {
     });
   }else{
     //디폴트 이미지 뿌려주기
-    fs.readFile(__dirname+`/html/img/${Pname}.png`, function(error, data){
+    fs.readFile(__dirname+`/html/img/PrepareImage.png`, function(error, data){
       res.end(data);
     });
   }
- 
-  //const imagePath = `..\\html\\img\\${Pname}.png`; // Replace with the actual path to your image file
-  //console.log("이미지 호출 : "+imagePath);
-  //res.render('index', { imagePath });
+
 });
 
-/*
- //해당하는 이미지불러오기
-  app.get('/pic/:Pname', (req, res) => {
-    const {Pname} = req.params;
-    console.log("이미지 호출 : "+Pname);
-    console.log(`\\html\\img\\${Pname}.png`);
-    res.sendFile(`html\\img\\${Pname}.png`);
-  });
- */
-
-
-  app.get('/image/:name', (req, res) => {
-    const { name }= req.params;
-
-    console.log("호출 이미지 :" + name);
-    const imgPath = __dirname+'/html/img/'+name+'.png';
-    //var imagePath = path.join(__dirname, '\html\img\RPA_BOT4.png');
-    console.log('이미지 전체 경로 : ' + imgPath);
-  
-    fs.readFile(imgPath, (err, data) => {
-      if (err) {
-        console.error(err);
-        res.status(500).send('Error');
-        return;
-      }
-  
-      res.writeHead(200, {
-        'Content-Type': 'image/jpeg',
-        'Content-Length': data.length
-      });
-      res.end(data);
-    });
-  });
-
-
-
-  // index에서 모든 화면 이동 구현
-  app.get('/:name', function (req, res) {
+app.get('/:name', function (req, res) {
     const { name }=req.params;
     console.log("받은 값 : "+name); // 사용자가 던진 URL을 이런식으로 받을 수 있구나
 
@@ -84,9 +44,9 @@ app.get('/pic/:Pname', (req, res) => {
         console.log(name+"접근");
         res.writeHead(200, {'Content-Type' : 'text/html'});
         res.end(data);
-    })
+  })
 
-  });
+});
 
   //app.get('/image', ctrl.Love);
 
