@@ -30,6 +30,46 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .flip {
+        flex:0 0 auto;
+        width:25%;
+        height: 300px;
+        perspective: 100%;
+        }
+
+        .card {
+        box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+        height: 100%;
+        text-align:center !important;
+        position: relative;
+        transition: .5s;
+        transform-style: preserve-3d;
+        background-color: antiquewhite;
+        }	
+
+        .front, .back {
+        position: absolute;
+        width: 100%; 
+        height: 100%;
+        backface-visibility: hidden;
+        }
+
+        .front {
+        box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+        background-color :white;
+        }
+
+        .back { 
+        background-color :white;
+        transform: rotateY(180deg);
+        }
+
+        .flip:hover .card {
+        transform: rotateY(180deg);
+        }
+</style>
     
 </head>
 
@@ -104,8 +144,8 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">What RPA?</h5>
-                        <h1 class="mb-4">Welcome to My Page</h1>
+                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">Why Developer?</h5>
+                        <h1 class="mb-4">IT Developer</h1>
                         <p class="mb-4">안녕하세요. 4년동안 RPA, WebSite 등 다양한 IT 서비스를 기획해 보고싶어서 여러 프로젝트를 진행하고 있습니다. 주요 업무는 RPA를 진행하고 있습니다.</p>
                         <p class="mb-4">제가 여러 IT 서비스보다 RPA를 더 좋아하는 이유는 어떠한 시스템과도 브릿지 역할을 해줄 수 있어서 다른 IT 서비스와 다르게 빠르게 연결해주고 결과를 피드백해 줄 수 있다는게 장점으로 생각하고 있습니다.</p>
                         <p class="mb-4">새로운 것들을 다른 프로그램보다 손쉽게 붙여볼 수 있어서 프로세스를 설계하고 개발할때 마다 다이나믹한 변화를 줄 수 있다는게 너무 매력적인 것 같습니다.</p>
@@ -202,6 +242,77 @@
         </div>
         <!-- About End -->
 
+        <!-- Test Start -->
+        <div class="container-xxl pt-5 pb-3">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Project Site</h5>
+                    <h1 class="mb-5">My Symbol</h1>
+                </div>
+                <div class="row g-4">
+                    <div class="flip">
+                        <div class="card">
+                            <div class="front">
+                                <img class="img-fluid" src="img/farmer.png" alt="">                                
+                            </div>
+                            <div class="back">
+                                <p class="mb-4"></p>
+                                <h1 class="mb-4">성실함</h1>
+                                <p class="mb-4"></p>
+                                <p class="mb-4">항상 무언가 할때 시작할때의 마음과 끝날때의 마음을 항상 같게하려고 노력합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip">
+                        <div class="card">
+                            <div class="front">
+                                <img class="img-fluid" src="img/farmer.png" alt="">                                
+                                <p>PM, PL, Developer</p>
+                            </div>
+                            <div class="back">
+                                <p class="mb-4"></p>
+                                <h1 class="mb-4">성실함</h1>
+                                <p class="mb-4"></p>
+                                <p class="mb-4">항상 무언가 할때 시작할때의 마음과 끝날때의 마음을 항상 같게하려고 노력합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip">
+                        <div class="card">
+                            <div class="front">
+                                <img class="img-fluid" src="img/farmer.png" alt="">                                
+                                <p>PM, PL, Developer</p>
+                            </div>
+                            <div class="back">
+                                <p class="mb-4"></p>
+                                <h1 class="mb-4">성실함</h1>
+                                <p class="mb-4"></p>
+                                <p class="mb-4">항상 무언가 할때 시작할때의 마음과 끝날때의 마음을 항상 같게하려고 노력합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip">
+                        <div class="card">
+                            <div class="front">
+                                <img class="img-fluid" src="img/farmer.png" alt="">                                
+                                <p>PM, PL, Developer</p>
+                            </div>
+                            <div class="back">
+                                <p class="mb-4"></p>
+                                <h1 class="mb-4">성실함</h1>
+                                <p class="mb-4"></p>
+                                <p class="mb-4">항상 무언가 할때 시작할때의 마음과 끝날때의 마음을 항상 같게하려고 노력합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Test End -->
+
+
+
+
         <!-- Team Start -->
         <div class="container-xxl pt-5 pb-3">
             <div class="container">
@@ -255,7 +366,7 @@
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                         <div class="team-item text-center rounded overflow-hidden">
                             <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/PrepareImage.png" alt="">s
+                                <img class="img-fluid" src="img/PrepareImage.png" alt="">
                             </div>
                             <h5 class="mb-0">준비중...</h5>
                             <small>미래 준비중입니다.</small>
